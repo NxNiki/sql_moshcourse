@@ -64,8 +64,41 @@ begin
     set risk_factor = invoices_total / invoices_count * 5;
     
     select risk_factor;
-end
+end $$
 
 delimiter ;
+
+## functions (only return a single value)
+delimiter $$
+CREATE FUNCTION get_client_risk_factor (
+	client_id INT
+)
+RETURNS INTEGER
+## atributes:
+#deterministic
+reads sql data
+#modifies sql data
+BEGIN
+	declare risk_factor decimal(9, 2) default 0;
+    declare invoices_total decimal(9, 2);
+    declare invoices_count int;
+    
+    select count(*), sum(invoice_total)
+    into invoices_count, invoices_total
+    from invoices i
+    where i.client_id = client_id;
+    
+    set risk_factor = invoices_total / invoices_count * 5;
+    
+    return ifnull(risk_factor, 0);
+
+END $$
+
+delimiter ;
+
+select client_id, name, get_client_risk_factor(client_id) as risk_factor
+from clients;
+
+drop function if exists get_client_risk_factor;
 
 
