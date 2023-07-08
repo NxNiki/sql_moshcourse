@@ -1,5 +1,51 @@
+
+
+select *
+from employees e
+where salary > (
+	select avg(salary)
+	from employees
+);	
+
+# find products that have never been ordered:
+select *
+from products
+where product_id not in (
+	select distinct product_id
+	from order_items
+)
+
+## subqueries vs joins:
+# quite often, we can rewrite subqueries using a join and vice versa.
+# performance and readability:
+
+select *
+from clients
+left join invoices using (client_id)
+where invoice_id is null
+
+# find customers who have ordered lettuce:
+
+select *
+from customers
+where customer_id in (
+	select o.customer_id
+	from order_items oi
+	join orders o using (order_id)
+	where product_id = 3
+)
+
+# using join:
+select distinct customer_id, first_name, last_name
+from customers c
+join orders o using (customer_id)
+join order_items oi using (order_id)
+where oi.product_id = 3
+
+	
 ## correlated subqueries:
 # select employees with salary higher than the avg salary in the same office:
+	
 select *
 from employees e
 where salary > (
