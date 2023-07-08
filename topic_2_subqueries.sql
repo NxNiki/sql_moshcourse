@@ -99,6 +99,7 @@ where salary > (
 );
 
 # correlated subquery get executed for each row of the main query. So it can sometimes be slow.
+# but it has lots of applications in real world.
 use sql_invoicing;
 select *
 from invoices i
