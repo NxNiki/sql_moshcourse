@@ -59,8 +59,36 @@ where invoice_total > all (
 	where client_id = 3
 )
 
+# select clients with at least two invoices:
+	
+select client_id, count(*)
+from invoices
+group by client_id
+having count(*) >= 2
+
+select *
+from clients
+where client_id in (
+	select client_id
+	from invoices
+	group by client_id
+	having count(*) >= 2
+)
+
+select *
+from clients
+where client_id = any (
+	select client_id
+	from invoices
+	group by client_id
+	having count(*) >= 2
+)
+	
 ## correlated subqueries:
 # select employees with salary higher than the avg salary in the same office:
+-- for each employee
+--	calculate the avg salary for employee.office
+--	return the employee if salary > avg
 	
 select *
 from employees e
