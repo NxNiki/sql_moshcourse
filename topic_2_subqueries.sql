@@ -42,7 +42,23 @@ join orders o using (customer_id)
 join order_items oi using (order_id)
 where oi.product_id = 3
 
-	
+# select invoices larger than all invoices of client 3
+select *
+from invoices
+where invoice_total > (
+	select max(invoice_total)
+	from invoices
+	where client_id = 3
+)
+
+select *
+from invoices
+where invoice_total > all (
+	select invoice_total
+	from invoices
+	where client_id = 3
+)
+
 ## correlated subqueries:
 # select employees with salary higher than the avg salary in the same office:
 	
