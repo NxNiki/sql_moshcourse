@@ -84,7 +84,7 @@ group by client_id
 having total_sales > 500 and number_of_invoices > 5 # columns need to be in the select clause.
 
 
-# rollup operator: accumulate values for each group.
+# rollup operator: adds up values for aggregate values.
 
 select
   client_id,
