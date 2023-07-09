@@ -1,5 +1,5 @@
 # aggregate functions:
-# only apply on non-nul values
+# only apply on non-null values
 select 
   max(invoice_total) as highest,
   min(invoice_total) as lowest,
@@ -27,7 +27,7 @@ select
   sum(invoice_total) as total_sales,
   sum(payment_total) as total_payments,
   sum(invoices_total - payment_total) as what_we_expect
-from inovices
+from invoices
 where invoice_date between '2019-01-01' and '2019-06-30'
 union
 select
@@ -35,7 +35,7 @@ select
   sum(invoice_total) as total_sales,
   sum(payment_total) as total_payments,
   sum(invoices_total - payment_total) as what_we_expect
-from inovices
+from invoices
 where invoice_date between '2019-07-01' and '2019-12-31'
 union
 select
@@ -43,7 +43,7 @@ select
   sum(invoice_total) as total_sales,
   sum(payment_total) as total_payments,
   sum(invoices_total - payment_total) as what_we_expect
-from inovices
+from invoices
 where invoice_date between '2019-01-01' and '2019-12-31'
 
 # group by clause:
