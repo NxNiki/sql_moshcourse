@@ -74,7 +74,7 @@ group by client_id
 having total_sales > 500 # filter data after rows are grouped.
 
 
-# having clause with compond filter condition
+# having clause with a compound filter condition
 select
   client_id,
   sum(invoice_total) as total_sales,
@@ -88,7 +88,7 @@ having total_sales > 500 and number_of_invoices > 5 # columns need to be in the 
 select
   client_id,
   sum(invoice_total) as total_sales
-from inovices i
+from invoices i
 join clients c using(client_id)
 group by state, city with rollup
 
