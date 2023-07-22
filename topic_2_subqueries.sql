@@ -87,7 +87,7 @@ where client_id = any (
 ## correlated subqueries:
 # select employees with salary higher than the avg salary in the same office:
 -- for each employee
---	calculate the avg salary for employee.office
+--	calculate the avg salary for employees.office
 --	return the employee if salary > avg
 	
 select *
@@ -98,7 +98,7 @@ where salary > (
     where office_id = e.office_id
 );
 
-# correlated subquery get executed for each row of the main query. So it can sometimes be slow.
+# correlated subquery gets executed for each row of the main query. So it can sometimes be slow.
 # but it has lots of applications in real world.
 use sql_invoicing;
 select *
@@ -117,10 +117,16 @@ where client_id in (select distinct client_id from invoices);
 
 # the above query is inefficient if the result of subquery is huge.
 
+# In exsits operator, the subquery does not return a result to the outer query, 
+# it will return an indication of whether any rows in the subquery match the search condition
+# For every client in the outer query, if there is a row matches the condition, it will return True to
+# the exists operator and it will include the current record in the final result.
+	
 select *
 from clients c
 where exists (select client_id from invoices where c.client_id = client_id)
 ;
+
 
 # find the product that has never been ordered:
 use sql_store;
