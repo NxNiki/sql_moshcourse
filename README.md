@@ -62,6 +62,9 @@ convert(c.report_year, char)
 datediff()
 concat_ws('-', year, '01-01') # Add strings together. Use '.' to separate the concatenated string values
 
+LC 1174:
+rank() over(partition by customer_id order by order_date) 
+
 
 
 
