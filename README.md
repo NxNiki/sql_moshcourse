@@ -12,6 +12,13 @@ string_agg() within group (order by ..)
 LC 176:
 ifnull(expression, alt-value)
 
+
+### window function: 
+row_number()
+rank()
+dense_rank()
+ntile()
+
 LC 511:
 dense_rank()
 
@@ -27,6 +34,12 @@ lag()
 sum(la diff) over (order by id)
 accumulate the sum of value with a given order.
 
+LC 1951:
+rank() over(order by count(*) desc)
+
+LC 1204:
+sum() over(order by weight)
+
 LC 1321:
 cast() over ()
 convert value to specified datatype
@@ -35,12 +48,6 @@ datediff()
 
 LC 1867:
 max() over()
-
-window function: 
-row_number()
-rank()
-dense_rank()
-ntile()
 
 aggregate function:
 count()
@@ -54,8 +61,7 @@ date_diff()
 lead()/lag()
 coalesce()
 
-LC 1951:
-rank() over(order by count(*) desc)
+
 
 LC 1384:
 convert(c.report_year, char)
