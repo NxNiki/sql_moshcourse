@@ -12,6 +12,9 @@ string_agg() within group (order by ..)
 LC 176:
 ifnull(expression, alt-value)
 
+### group by:
+LC 585:
+group by will only return one row for each group. If there are multiple rows, the first will be selected.
 
 ### window function: 
 row_number()
