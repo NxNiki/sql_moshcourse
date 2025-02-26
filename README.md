@@ -10,7 +10,7 @@ https://codewithmosh.com/courses
 MySQL:
 
 ```MySQL
-group_concat()
+GROUP_CONCAT(<col> ORDER BY <col> ASC SEPARATOR ',')
 ```
 
 MS SQL server:
