@@ -5,7 +5,7 @@ https://codewithmosh.com/courses
 
 ## notes of leetcode questions:
 
-LC 1484:
+#### LC 1484:
 
 MySQL:
 
@@ -19,8 +19,11 @@ string_agg()
 string_agg() within group (order by ..)
 ```
 
-LC 176:
+#### LC 176:
+
+```MySQL
 ifnull(expression, alt-value)
+```
 
 
 ### window function: 
