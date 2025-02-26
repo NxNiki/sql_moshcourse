@@ -20,15 +20,25 @@ string_agg() within group (order by ..)
 LC 176:
 ifnull(expression, alt-value)
 
-### group by:
-LC 585:
-group by will only return one row for each group. If there are multiple rows, the first will be selected.
 
 ### window function: 
+
+count(*) over (partition by <col>)
+
 row_number()
+
 rank()
+
 dense_rank()
+
 ntile()
+
+
+LC 585:
+
+group by will only return one row for each group. If there are multiple rows, the first will be selected.
+
+
 
 LC 511:
 dense_rank()
