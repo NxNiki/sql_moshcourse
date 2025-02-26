@@ -6,7 +6,15 @@ https://codewithmosh.com/courses
 ## notes of leetcode questions:
 
 LC 1484:
+
+MySQL:
+
+group_concat()
+
+MS SQL server
+
 string_agg() 
+
 string_agg() within group (order by ..)
 
 LC 176:
