@@ -11,11 +11,12 @@ MySQL:
 
 ```MySQL
 group_concat()
+```
 
-MS SQL server
+MS SQL server:
 
+```MySQL
 string_agg() 
-
 string_agg() within group (order by ..)
 ```
 
