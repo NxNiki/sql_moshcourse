@@ -41,17 +41,18 @@ dense_rank()
 ntile()
 ```
 
-LC 585:
+#### LC 585:
 
 > `group by` will only return one row for each group. If there are multiple rows, the first will be selected.
 
-LC 511:
+
+#### LC 511:
 
 ```MySQL
 dense_rank()
 ```
 
-LC 1907:
+#### LC 1907:
 
 `union all`, `coalesce`, `left join`.
 
@@ -94,12 +95,10 @@ date_diff()
 lead()/lag()
 coalesce()
 
-
-
 LC 1384:
 convert(c.report_year, char)
 datediff()
-concat_ws('-', year, '01-01') # Add strings together. Use '.' to separate the concatenated string values
+concat_ws('-', year, '01-01')  # Add strings together. Use '.' to separate the concatenated string values
 
 LC 1174:
 rank() over(partition by customer_id order by order_date) 
