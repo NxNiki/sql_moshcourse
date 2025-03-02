@@ -1,9 +1,9 @@
 # sql_moshcourse
 
-These is the notes for the mashcourse for SQL:
+Notes for the Mosh course for SQL:
 https://codewithmosh.com/courses
 
-## notes of leetcode questions:
+# notes of leetcode questions:
 
 #### LC 1484:
 
@@ -43,13 +43,17 @@ ntile()
 
 LC 585:
 
-group by will only return one row for each group. If there are multiple rows, the first will be selected.
+> `group by` will only return one row for each group. If there are multiple rows, the first will be selected.
 
 LC 511:
 
 ```MySQL
 dense_rank()
 ```
+
+LC 1907:
+
+`union all`, `coalesce`, `left join`.
 
 LC 626:
 mod(id, 2) != 0
