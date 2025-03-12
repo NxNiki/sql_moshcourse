@@ -27,6 +27,7 @@ For the sample input, the output is:
 +---------+---------+
 */
 
+- solution 1:
 select
     id
     , ifnull(case
@@ -35,3 +36,17 @@ select
             end, student) as student
 from
     seat
+
+- solution 2:
+    
+SELECT ROW_NUMBER() OVER() id, student
+FROM seat
+ORDER BY IF(MOD(id, 2) = 0, id-1, id+1)
+
+- solution 3:
+
+SELECT
+ROW_NUMBER() OVER(order by IF(MOD(id, 2) = 0, id-1, id+1) ) as id,
+student
+FROM seat
+
