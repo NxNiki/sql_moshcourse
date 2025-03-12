@@ -69,8 +69,13 @@ lag()
 sum(la diff) over (order by id)
 ```
 
-LC 1951:
+#### LC 1951:
+
+use self join and window function:
+
+```MySQL
 rank() over(order by count(*) desc)
+```
 
 LC 1204:
 sum() over(order by weight)
