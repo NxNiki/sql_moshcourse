@@ -1,4 +1,4 @@
-# notes of leetcode questions:
+Note on Leetcode questions to prepare the interview
 
 #### LC 1484:
 
