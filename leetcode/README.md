@@ -59,12 +59,15 @@ row_number() over(order by id2) as id
 coalesce(s1.student, s2.student, ...) # return the first non-null value.
 ```
 
-LC 180:
+#### LC 180:
+
+```MySQL
 lead(scaler-expression, [offset], [default])
 lag()
 
+-- accumulate the sum of value with a given order.
 sum(la diff) over (order by id)
-accumulate the sum of value with a given order.
+```
 
 LC 1951:
 rank() over(order by count(*) desc)
