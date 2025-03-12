@@ -83,7 +83,7 @@ rank() over(order by count(*) desc)
 - use order by and limit to get the row with max weights
 
 ```MySQL
-sum() over(order by weight)
+sum() over(order by turn)
 ```
 
 LC 1321:
