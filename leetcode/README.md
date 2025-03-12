@@ -77,8 +77,14 @@ use self join and window function:
 rank() over(order by count(*) desc)
 ```
 
-LC 1204:
+#### LC 1204:
+
+- use window function `sum() over()` to calculate the accumulative sum of weights
+- use order by and limit to get the row with max weights
+
+```MySQL
 sum() over(order by weight)
+```
 
 LC 1321:
 cast() over ()
