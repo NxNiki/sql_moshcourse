@@ -28,6 +28,7 @@ For the sample input, the output is:
 */
 
 - solution 1:
+    
 select
     id
     , ifnull(case
@@ -49,4 +50,14 @@ SELECT
 ROW_NUMBER() OVER(order by IF(MOD(id, 2) = 0, id-1, id+1) ) as id,
 student
 FROM seat
+
+- solution 4:
+
+SELECT 
+    id,
+    CASE
+        WHEN id % 2 = 0 THEN LAG(student) OVER(ORDER BY id)
+        ELSE COALESCE(LEAD(student) OVER(ORDER BY id), student)
+    END AS student
+FROM Seat
 
