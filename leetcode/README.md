@@ -69,14 +69,6 @@ lag()
 sum(la diff) over (order by id)
 ```
 
-#### LC 1951:
-
-use self join and window function:
-
-```MySQL
-rank() over(order by count(*) desc)
-```
-
 #### LC 1204:
 
 - use window function `sum() over()` to calculate the accumulative sum of weights
@@ -85,6 +77,16 @@ rank() over(order by count(*) desc)
 ```MySQL
 sum() over(order by turn)
 ```
+
+#### LC 1951:
+
+use self join and window function:
+
+```MySQL
+rank() over(order by count(*) desc)
+```
+
+
 
 LC 1321:
 cast() over ()
