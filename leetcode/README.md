@@ -51,10 +51,13 @@ dense_rank()
 
 `union all`, `coalesce`, `left join`.
 
-LC 626:
+#### LC 626:
+
+```MySQL
 mod(id, 2) != 0
 row_number() over(order by id2) as id
 coalesce(s1.student, s2.student, ...) # return the first non-null value.
+```
 
 LC 180:
 lead(scaler-expression, [offset], [default])
