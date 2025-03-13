@@ -35,3 +35,5 @@ from (
 ) t
 where max_quantity > max_avg_quantity
 
+-- The inner avg(quantity) is part of the group by aggregation. Then, the max() over() is a window function applied to the result of the group by.
+
