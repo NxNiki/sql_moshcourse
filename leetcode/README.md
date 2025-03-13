@@ -89,11 +89,17 @@ rank() over(order by count(*) desc)
 #### LC 1321:
 
 use self join and selected rows with data difference between 0 and 6.
+or use window function to calculate the sum for each 7 consecutive days.
 
 ```MySQL
 --convert value to specified datatype
 cast() over ()
+
 datediff()
+
+DATE_ADD(MIN(visited_on), INTERVAL 6 DAY)
+
+sum() over(order by ... range between interval 6 day preceding and current row)
 ```
 
 LC 1867:
