@@ -102,11 +102,18 @@ DATE_ADD(MIN(visited_on), INTERVAL 6 DAY)
 sum() over(order by ... range between interval 6 day preceding and current row)
 ```
 
-LC 1867:
-max() over()
+#### LC 1867:
+
+
+combine window function with `group by`.
+
+```MySQL
+max(avg()) over()
+max()
 
 aggregate function:
 count()
+```
 
 LC 615:
 date-format(date, '%Y-%m')
